@@ -11,6 +11,7 @@ function App() {
       <h1>Todos</h1>
       <ToDoList />
       <ToDoList />
+      <ToDoList />
     </>
   )
 }
