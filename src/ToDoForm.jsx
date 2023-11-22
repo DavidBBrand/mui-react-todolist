@@ -6,6 +6,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from "@mui/material/IconButton";
 
 
+
 export default function ToDoForm({ addTodo }){
     const [text, setText] = useState("")
     const handleChange = (evt) => {
@@ -13,15 +14,15 @@ export default function ToDoForm({ addTodo }){
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        addTodo();
-        setText();
+        addTodo(text);
+        setText("");
     }
     return (
         <ListItem>
           <form onSubmit={handleSubmit}>
             <TextField 
               id="outlined-basic" 
-              label="Outlined" 
+              label="New Todo" 
               variant="outlined" 
               onChange={handleChange}
               value={text}

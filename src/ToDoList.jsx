@@ -2,18 +2,24 @@
 import List from '@mui/material/List';
 import ToDoItem from "./ToDoItem";
 import ToDoForm from "./ToDoForm";
+import { Box, Typography } from "@mui/material";
 
-import { useState } from "react";
-const initialTodos = [
-  {id:1, text: "walk the dog", completed: false},
-  {id:2, text: "walk the fish", completed: true},
-  {id:3, text: "walk the donkey", completed: false},
-  {id:4, text: "walk the pug", completed: true},
-  {id:5, text: "walk the monkey", completed: true},
-];
+import { useState, useEffect } from "react";
 
+const getInitialData = () => {
+  const data = JSON.parse(localStorage.getItem("todos"));
+  if (!data) return [];
+  return data;
+}
 export default function ToDoList() {
-    const [todos, setTodos] = useState(initialTodos);
+    const [todos, setTodos] = useState(getInitialData);
+
+    useEffect(() => {
+      localStorage.setItem(
+        'todos',
+        JSON.stringify(todos),
+      )
+    }, [todos])
 
     const removeTodo = (id) => {
       setTodos(prevTodos => {
@@ -33,10 +39,23 @@ export default function ToDoList() {
     }
     const addTodo = (text) => {
       setTodos(prevTodos => {
-        return [...prevTodos, {text: text, id: 8, completed: false}];
+        return [...prevTodos, {text: text, id: crypto.randomUUID(), completed: false}];
       });
      };
     return (
+      <Box 
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center",
+          m: 3,
+          background: "lightGreen",
+        }}
+      >
+        <Typography variant="h2" component="h1" sx={{ flexGrow: 1 }}>
+            To-Do List
+        </Typography>
         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
             {todos.map((todo) => {
               return  <ToDoItem todo={todo}  key={todo.id} remove={removeTodo} toggle={() => toggleTodo(todo.id)} />;
@@ -44,6 +63,7 @@ export default function ToDoList() {
             })}
             <ToDoForm addTodo={addTodo} />
         </List>
+      </Box>
     )
 }
 
