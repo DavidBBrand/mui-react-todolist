@@ -10,8 +10,7 @@ function App() {
       <CssBaseLine />
       <h1>Todos</h1>
       <ToDoList />
-      <ToDoList />
-      <ToDoList />
+
     </>
   )
 }
