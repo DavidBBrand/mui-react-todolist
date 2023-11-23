@@ -10,7 +10,6 @@ function App() {
     <>
       <Navbar/>
       <CssBaseLine />
-      <h1>Todos</h1>
       <ToDoList />
 
     </>

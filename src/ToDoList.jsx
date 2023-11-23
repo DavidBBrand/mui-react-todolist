@@ -50,7 +50,8 @@ export default function ToDoList() {
           flexDirection: "column",
           alignItems: "center",
           m: 3,
-          background: "lightGreen",
+          backgroundColor:"whiteSmoke"
+          
         }}
       >
         <Typography variant="h2" component="h1" sx={{ flexGrow: 1 }}>
