@@ -49,7 +49,7 @@ export default function ToDoList() {
           justifyContent: "center",
           flexDirection: "column",
           alignItems: "center",
-          m: 3,
+          m: 1,
           backgroundColor:"lightYellow"
           
         }}
