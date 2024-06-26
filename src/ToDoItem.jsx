@@ -27,8 +27,6 @@ export default function ToDoItem({todo, remove, toggle }) {
         }
         disablePadding
         >
-        
-        
           <ListItemIcon>
             <Checkbox
               edge="start"

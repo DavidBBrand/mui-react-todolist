@@ -3,6 +3,7 @@ import CssBaseLine from "@mui/material/CssBaseLine"
 import ToDoList from "./ToDoList"
 import Navbar from "./Navbar";
 
+
 function App() {
   
 
@@ -11,7 +12,6 @@ function App() {
       <Navbar/>
       <CssBaseLine />
       <ToDoList />
-
     </>
   )
 }

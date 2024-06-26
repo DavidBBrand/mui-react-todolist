@@ -20,7 +20,7 @@ export default function Navbar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            React and MaterialUI To-Do List Application
+            To-Do List App
           </Typography>
         </Toolbar>
       </AppBar>
