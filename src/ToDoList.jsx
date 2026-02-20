@@ -1,4 +1,3 @@
-
 import List from '@mui/material/List';
 import ToDoItem from "./ToDoItem";
 import ToDoForm from "./ToDoForm";
@@ -51,12 +50,12 @@ export default function ToDoList() {
           alignItems: "center",
           m: 1,
           background:"#F0FFF0",
-          border:"aliceBlue 29px groove",
-          borderRadius:"10px"
+          border:"aliceBlue 8px groove",
+          borderRadius:"8px"
         }}
       >
         <Typography variant="h2" component="h1" sx={{ flexGrow: 1 }}>
-            To-Do List
+            Things To Do
         </Typography>
         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
             {todos.map((todo) => {
